@@ -1,11 +1,4 @@
-// @ts-check
-
-/**
- * @type {import('@nrwl/react/module-federation').ModuleFederationConfig}
- **/
-const moduleFederationConfig = {
+module.exports = {
   name: 'host',
-  remotes: ['shop', 'cart', 'about'],
+  remotes: ['main-app'],
 };
-
-module.exports = moduleFederationConfig;

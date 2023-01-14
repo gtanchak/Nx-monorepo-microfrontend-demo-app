@@ -1,12 +1,15 @@
 {
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
-  "npmScope": "nx-poc",
+  "npmScope": "nx-microfrontend",
+  "affected": {
+    "defaultBase": "master"
+  },
   "tasksRunnerOptions": {
     "default": {
       "runner": "@nrwl/nx-cloud",
       "options": {
         "cacheableOperations": ["build", "lint", "test", "e2e"],
-        "accessToken": "OTJhMTMxNTAtYzI3Mi00NGZkLTgxNGQtM2U3YmYwMjA1YTA4fHJlYWQtd3JpdGU="
+        "accessToken": "N2EwYjE3NDMtNTAyYi00N2RkLTgyMGItMjhmOTMyYzkxOWU3fHJlYWQtd3JpdGU="
       }
     }
   },
@@ -14,11 +17,11 @@
     "build": {
       "dependsOn": ["^build"]
     },
-    "test": {
-      "inputs": ["default", "^default", "{workspaceRoot}/jest.preset.js"]
-    },
     "lint": {
       "inputs": ["default", "{workspaceRoot}/.eslintrc.json"]
+    },
+    "test": {
+      "inputs": ["default", "^default", "{workspaceRoot}/jest.preset.js"]
     }
   },
   "generators": {
@@ -26,6 +29,7 @@
       "application": {
         "style": "css",
         "linter": "eslint",
+        "bundler": "webpack",
         "babel": true
       },
       "component": {
@@ -36,6 +40,5 @@
         "linter": "eslint"
       }
     }
-  },
-  "defaultProject": "host"
+  }
 }

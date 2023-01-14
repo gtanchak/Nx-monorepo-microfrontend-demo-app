@@ -11,7 +11,6 @@ describe('App', () => {
         <App />
       </BrowserRouter>
     );
-
     expect(baseElement).toBeTruthy();
   });
 
@@ -21,7 +20,6 @@ describe('App', () => {
         <App />
       </BrowserRouter>
     );
-
     expect(getByText(/Welcome host/gi)).toBeTruthy();
   });
 });
